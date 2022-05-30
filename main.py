@@ -16,14 +16,6 @@ db = SQLAlchemy(app)
 
 ##Cafe TABLE Configuration
 class Cafe(db.Model):
-    """_summary_
-
-    Args:
-        db (_type_): _description_
-
-    Returns:
-        _type_: _description_
-    """
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), unique=True, nullable=False)
     map_url = db.Column(db.String(500), nullable=False)
