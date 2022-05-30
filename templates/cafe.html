@@ -1,0 +1,51 @@
+{% include "header.html" %}
+
+<body>
+
+        <div class="card banner" style="width: 35rem;">
+        <img src="{{cafe['img_url']}}" class="card-img-top" alt="cafe image" height="380">
+        </div>
+        <div class="card" style="width: 60rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{cafe['name']}}</h5>
+                <p class="card-text">{{cafe['location']}}</p>
+                <p class="card-text">Coffee Price: {{cafe['coffee_price']}}</p>
+                <p class="card-text"><b>Amenities:</b></p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Seats:  {{cafe['seats']}} </li>
+                    <li class="list-group-item">Toilets Available: 
+                        {% if cafe['has_toilet'] %}
+                        ✅
+                        {% else %}
+                        ❌
+                        {% endif %}
+                    </li>
+                    <li class="list-group-item">Wifi Available:
+                            {% if cafe['has_wifi'] %}
+                            ✅
+                            {% else %}
+                            ❌
+                            {% endif %}
+                        </li>
+                    <li class="list-group-item">Power Available:                            
+                        {% if cafe['has_sockets'] %}
+                            ✅
+                            {% else %}
+                            ❌
+                            {% endif %}
+                    </li>
+                    <li class="list-group-item">Calls Allowed:                            
+                        {% if cafe['can_take_calls'] %}
+                            ✅
+                            {% else %}
+                            ❌
+                            {% endif %}
+                    </li>
+                </ul>
+            </div>
+            <a href="{{cafe['map_url']}}" class="btn btn-primary">Directions</a>
+        </div>
+        
+</body>
+
+{% include "footer.html" %}

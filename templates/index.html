@@ -1,0 +1,67 @@
+{% include "header.html" %}
+
+<body>
+    <div class="container-fluid">
+        <button class="btn btn-secondary" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+        Filter
+      </button>
+        <div class="row">
+        <div id="filter" class="position-relative col-lg-1 col-md-4 d-md-block" >
+            <!-- filters -->
+            <div style="min-height: 120px;">
+                <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                    <div class="row">
+                        <h3>Facilities</h3>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="wifi-toggle">
+                            <label class="form-check-label" for="wifi-toggle">Wifi</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="power-toggle">
+                            <label class="form-check-label" for="power-toggle">Power</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="toilet-toggle">
+                            <label class="form-check-label" for="toilet-toggle">Amenities</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="calls-toggle">
+                            <label class="form-check-label" for="calls-toggle">Calls Allowed</label>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="form-check-label" for="coffee-price">Coffee Price
+                                <span class="input-group-text">$0.00</span>
+                                <input id="coffee-price" type="number" class="form-control"
+                                    aria-label="Dollar amount (with dot and two decimal places)" min="0.00" step="0.25"
+                                    step="0.01">
+                            </label>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="form-check-label" for="seats">Number of Seats
+                                <input id="seats" type="number" class="form-control" aria-label="seats" min="0">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Cafe Card List -->
+            <div id="cafe-card-list" class="col-md-9 order-2">
+                {% for cafe in cafes%}
+                <div class="card" style="width: 28rem;">
+                    <img src="{{cafe['img_url']}}" class="card-img-top" alt="cafe image" , height="350">
+                    <div class="card-body">
+                        <h5 class="card-title">{{cafe['name']}}</h5>
+                        <p class="card-text">{{cafe['location']}}</p>
+                        <a href="{{ url_for('show_cafe', cafe_id=cafe.id) }}" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+
+
+{% include "footer.html" %}

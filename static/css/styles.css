@@ -1,0 +1,10 @@
+.card {
+    margin: 10px auto; /* Added */
+    /* float: none; Added */
+    margin-bottom: 10px; /* Added */
+}
+
+.form_container {
+    width: 80%;
+    margin: 3.5rem auto 0 auto;
+  }

@@ -1,0 +1,86 @@
+{% include "header.html" %}
+<div class="form_container">
+<body>
+    <form id="form" action="{{url_for('add_cafe')}}" method="post" validate>
+        <div class="form-group row">
+          <label for="name" class="col-sm-2 col-form-label">Cafe Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Cafe Name">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="loc" class="col-sm-2 col-form-label">Location</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="loc" name="loc" placeholder="Location e.g. Sydney Harbour, London Bridge etc">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="map_url" class="col-sm-2 col-form-label">Google Maps URL Link</label>
+          <div class="col-sm-10">
+            <input type="url" class="form-control" id="map_url" name="map_url" placeholder="Google Maps URL">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="img_url" class="col-sm-2 col-form-label">Image URL Link</label>
+          <div class="col-sm-10">
+            <input type="url" class="form-control" id="img_url" name="img_url" placeholder="Image URL">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="coffee_price" class="col-sm-2 col-form-label">Coffee Price</label>
+          <div class="col-sm-10">
+            <input type="number"  class="form-control" id="coffee_price" name="coffee_price" placeholder="$2.50"  min="0.00" max="10000.00" step="0.01" >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="seats" class="col-sm-2 col-form-label">Estimated Number of Seats</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="seats" name="seats" placeholder="20-30">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-2">Amenities:</div>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="sockets" name="sockets">
+              <label class="form-check-label" for="sockets">
+                Has Power Sockets
+              </label>
+            </div>
+          </div>
+          <div class="col-sm-2"></div>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="wifi" name="wifi">
+              <label class="form-check-label" for="wifi">
+                Wifi Avaliable
+              </label>
+            </div>
+          </div>
+          <div class="col-sm-2"></div>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="calls" name="calls">
+              <label class="form-check-label" for="calls">
+                Calls Allowed
+              </label>
+            </div>
+          </div>
+          <div class="col-sm-2"></div>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="toilet" name="toilet">
+              <label class="form-check-label" for="toilet">
+                Has Toilet(s)
+              </label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group row">
+            <button type="submit" class="btn btn-primary">Add Cafe</button>
+        </div>
+    </form>
+</body>
+</div>
+{% include "footer.html" %}
